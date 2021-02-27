@@ -8,11 +8,11 @@ Elabore um algoritmo para calcular o valor final de um produto com base em seu v
  Tabela de produto
  
  	CodigoProduto			Descrição do Produto				Valor do Produto
-	1				Camisa						70.00
-	2				Shorts						57.50
-	3				Meia						9.99
-	4				Toca						35.00
-	5				Luvas						19.50
+	1				          Camisa						          70.00
+	2				          Shorts						          57.50
+	3				          Meia						            9.99
+	4				          Toca						            35.00
+	5				          Luvas						            19.50
 
 -----------------------------------------------------------------
 

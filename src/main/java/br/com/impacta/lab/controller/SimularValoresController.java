@@ -50,9 +50,58 @@ public class SimularValoresController {
 		 * Ex.: Camisa sendo pago A vista no dinheiro com 10% de desconto custará 63.0 reais
 		 * 
 		 */
+		String descricaoProduto = "";
+    String descricaoCondicaoPagamento = "";
+    double valorFinal = 0;
+
+    switch(codigoProduto) {
+      case 1:
+        descricaoProduto = "Camisa";
+        valorFinal = 70.00;
+        break;
+      case 2:
+        descricaoProduto = "Shorts";
+        valorFinal = 57.50;
+        break;
+      case 3:
+        descricaoProduto = "Meia";
+        valorFinal = 9.99;
+        break;
+      case 4:
+        descricaoProduto = "Toca";
+        valorFinal = 35.00;
+        break;
+      case 5:
+        descricaoProduto = "Luvas";
+        valorFinal = 19.50;
+        break;
+      default:
+        return ResponseEntity.ok("Produto não encontrado");
+    }
+
+    switch(codTipoPagamento) {
+      case 1:
+        descricaoCondicaoPagamento = "A vista no dinheiro com 10% de desconto";
+        valorFinal = valorFinal - (valorFinal * 0.1);
+        break;
+      case 2:
+        descricaoCondicaoPagamento = "A vista no cartão de crédito  com 5% de desconto";
+        valorFinal = valorFinal - (valorFinal * 0.05);
+        break;
+      case 3:
+        descricaoCondicaoPagamento = "Em duas parcelas sem nenhum desconto";
+        break;
+      case 4:
+        descricaoCondicaoPagamento = "Em três vezes com 10% de juros";
+        valorFinal = valorFinal - (valorFinal * 0.1);
+        break;
+      default:
+        return ResponseEntity.ok("Tipo de pagamento não encontrado");
+    }
+
+    String retorno = descricaoProduto + " sendo pago " + descricaoCondicaoPagamento + " custará " + valorFinal + " reais";
 		
-		
-		return ResponseEntity.ok("Hello world !");
+		return ResponseEntity.ok(retorno);
 	}
 	
 }
